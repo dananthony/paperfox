@@ -1,16 +1,2 @@
-body {
-  background: #000;
-  margin: 0;
-}
-
-h1 {
-  display: none;
-}
-
-figure {
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
+@import "./variables.css";
+@import "./base.css";

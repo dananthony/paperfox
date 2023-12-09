@@ -1,0 +1,7 @@
+:root {
+  --svh-100: 100vh;
+
+  @supports (height: 100svh) {
+    --svh-100: 100svh;
+  }
+}
