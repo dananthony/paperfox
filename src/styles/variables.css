@@ -4,6 +4,6 @@
 
 @supports (height: 100svh) {
   :root {
-    --svh-100: 100vh;
+    --svh-100: 100svh;
   }
 }
