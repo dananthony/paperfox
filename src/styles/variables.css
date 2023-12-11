@@ -1,5 +1,12 @@
 :root {
   --svh-100: 100vh;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey: #58534f;
+
+  --font-stack-sans: "Favorit", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  --font-stack-mono: "GT Pressura Mono", monospace;
 }
 
 @supports (height: 100svh) {

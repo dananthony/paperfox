@@ -10,25 +10,37 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Paperfox Studio</title>
   </head>
-  <body>
-    <h1>Paperfox Studio</h1>
-    <figure class="logo-wrapper">
-      <picture class="logo">
-        <source
-          media="(max-width: 48em) and (orientation: portrait)"
-          srcset="logo.svg"
-        />
-        <source
-          media="(min-width: 48em), (orientation: landscape)"
-          srcset="logo-large.svg"
-        />
-        <img srcset="logo-large.svg" alt="" />
-      </picture>
-    </figure>
+  <body class="fluid-font-t5">
+    <h1 class="sr-only">Paperfox Studio</h1>
+    <div class="intro-background">
+      <figure class="logo-wrapper">
+        <picture class="logo">
+          <source
+            media="(max-width: 48em) and (orientation: portrait)"
+            srcset="logo.svg"
+          />
+          <source
+            media="(min-width: 48em), (orientation: landscape)"
+            srcset="logo-large.svg"
+          />
+          <img srcset="logo-large.svg" alt="" />
+        </picture>
+      </figure>
+    </div>
   </body>
 </html>
 
 <style>
+  .intro-background {
+    --clip-diameter: 45vmin;
+    --clip-x: 75%;
+    --clip-y: 50%;
+    background: var(--color-grey);
+    clip-path: circle(
+      calc(var(--clip-diameter) / 2) at var(--clip-x) var(--clip-y)
+    );
+  }
+
   .logo-wrapper {
     display: flex;
     justify-content: center;

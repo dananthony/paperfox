@@ -1,0 +1,80 @@
+[class*="fluid-font"] {
+  --fluid-font-min: 1;
+  --fluid-font-max: 1.25;
+  --fluid-font-viewport-max: 90;
+  --fluid-font-viewport-min: 20;
+
+  --fluid-font-slope: (var(--fluid-font-max) - var(--fluid-font-min)) /
+    (var(--fluid-font-viewport-max) - var(--fluid-font-viewport-min));
+
+  --fluid-font-size: clamp(
+    var(--fluid-font-min) * 1rem,
+    (
+        var(--fluid-font-min) - var(--fluid-font-slope) *
+          var(--fluid-font-viewport-min)
+      ) * 1rem + var(--fluid-font-slope) * 100vw,
+    var(--fluid-font-max) * 1rem
+  );
+}
+
+.fluid-font-t1 {
+  --fluid-font-min: 2.25;
+  --fluid-font-max: 4.5;
+
+  font: var(--fluid-font-size) / 1.25 var(--font-stack-sans);
+  font-weight: 500;
+}
+
+.fluid-font-t2 {
+  --fluid-font-min: 1.5;
+  --fluid-font-max: 3;
+
+  font: var(--fluid-font-size) / 1.25 var(--font-stack-sans);
+  font-weight: 500;
+}
+
+.fluid-font-t3 {
+  --fluid-font-min: 1.125;
+  --fluid-font-max: 2.25;
+
+  font: var(--fluid-font-size) / 1.33333 var(--font-stack-sans);
+  font-weight: 500;
+}
+
+.fluid-font-t4 {
+  --fluid-font-min: 1.125;
+  --fluid-font-max: 1.5;
+
+  font: var(--fluid-font-size) / 1.3 var(--font-stack-sans);
+  font-weight: 300;
+}
+
+.fluid-font-t4 {
+  --fluid-font-min: 1.125;
+  --fluid-font-max: 2.25;
+
+  font: var(--fluid-font-size) / 1.3 var(--font-stack-sans);
+  font-weight: 300;
+}
+
+.fluid-font-t4 {
+  --fluid-font-min: 1.125;
+  --fluid-font-max: 1.875;
+
+  font: var(--fluid-font-size) / 1.3 var(--font-stack-sans);
+  font-weight: 300;
+}
+
+.fluid-font-t5 {
+  --fluid-font-min: 1.125;
+  --fluid-font-max: 1.5;
+
+  font: var(--fluid-font-size) / 1.3 var(--font-stack-sans);
+  font-weight: 300;
+}
+
+.label {
+  font: 0.875rem / 1.33333 var(--font-stack-sans);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
