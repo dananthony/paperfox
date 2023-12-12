@@ -14,14 +14,14 @@ import Navigation from "../components/Navigation.astro";
   <body class="font-t5">
     <h1 class="sr-only">Paperfox Studio</h1>
     <Navigation />
-    <section class="intro-section">
-      <header class="intro-header">
+    <section class="intro__section">
+      <header class="intro__header">
         <p class="font-t6">Hi - we're Paperfox</p>
-        <h2 class="font-t1 intro-heading">We make<br />websites.</h2>
-        <a class="anchor intro-link" href="#about-us">Tell me more ↓</a>
+        <h2 class="font-t1 intro__heading">We make<br />websites.</h2>
+        <a class="anchor intro__link" href="#about-us">Tell me more ↓</a>
       </header>
-      <div class="intro-background">
-        <picture class="intro-logo">
+      <div class="intro__background">
+        <picture class="intro__logo">
           <source
             media="(max-width: 48em) and (orientation: portrait)"
             srcset="logo.svg"
@@ -38,27 +38,27 @@ import Navigation from "../components/Navigation.astro";
 </html>
 
 <style>
-  .intro-section {
+  .intro__section {
     height: var(--svh-100);
     display: flex;
     align-items: flex-end;
   }
 
-  .intro-header {
+  .intro__header {
     padding: 0 1.875rem 20vh;
     width: 100%;
   }
 
-  .intro-heading {
+  .intro__heading {
     margin-block-start: 1.25rem;
   }
 
-  .intro-link {
+  .intro__link {
     display: inline-block;
     margin-block-start: 1.875rem;
   }
 
-  .intro-background {
+  .intro__background {
     --clip-diameter: 45vmin;
     --clip-x: 75%;
     --clip-y: 50%;
@@ -75,28 +75,28 @@ import Navigation from "../components/Navigation.astro";
     justify-content: center;
   }
 
-  .intro-logo {
+  .intro__logo {
     width: 80vw;
   }
 
   @media (--md) {
-    .intro-section {
+    .intro__section {
       align-items: center;
     }
 
-    .intro-header {
+    .intro__header {
       padding: 0 6.25rem;
     }
 
-    .intro-heading {
+    .intro__heading {
       margin-block-start: 2.5rem;
     }
 
-    .intro-link {
+    .intro__link {
       margin-block-start: 4.0625rem;
     }
 
-    .logo-wrapper {
+    .logo__wrapper {
       padding-inline: 6.25rem;
     }
   }
