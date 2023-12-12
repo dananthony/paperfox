@@ -3,7 +3,7 @@ const { title } = Astro.props;
 ---
 
 <nav class="nav" aria-label="main navigation">
-  <a aria-label="Homepage" href="/" class="logo-link">
+  <a aria-label="Homepage" href="/" class="nav__logo-link">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 37"
       ><g fill="none"
         ><path
@@ -13,7 +13,7 @@ const { title } = Astro.props;
       ></svg
     >
   </a>
-  <button>Menu</button>
+  <button class="nav__menu-button">Menu</button>
 </nav>
 
 <style>
@@ -26,9 +26,16 @@ const { title } = Astro.props;
     justify-content: space-between;
   }
 
-  .logo-link {
+  .nav__logo-link {
     width: 3rem;
     height: 1.125rem;
+  }
+
+  .nav__menu-button {
+    writing-mode: vertical-lr;
+    font: 0.875rem / 1 var(--font-stack-mono);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
   }
 
   @media screen and (--md) {
@@ -38,9 +45,13 @@ const { title } = Astro.props;
       right: 0.625rem;
     }
 
-    .logo-link {
+    .nav__logo-link {
       width: 3.75rem;
       height: 1.375rem;
+    }
+
+    .nav__menu-button {
+      font-size: 1.5rem;
     }
   }
 </style>
