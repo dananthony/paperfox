@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <html lang="en">
@@ -10,11 +11,17 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Paperfox Studio</title>
   </head>
-  <body class="fluid-font-t5">
+  <body class="font-t5">
     <h1 class="sr-only">Paperfox Studio</h1>
-    <div class="intro-background">
-      <figure class="logo-wrapper">
-        <picture class="logo">
+    <Navigation />
+    <section class="intro-section">
+      <header class="intro-header">
+        <p class="font-t6">Hi - we're Paperfox</p>
+        <h2 class="font-t1 intro-heading">We make<br />websites.</h2>
+        <a class="anchor intro-link" href="#about-us">Tell me more ↓</a>
+      </header>
+      <div class="intro-background">
+        <picture class="intro-logo">
           <source
             media="(max-width: 48em) and (orientation: portrait)"
             srcset="logo.svg"
@@ -25,12 +32,32 @@ import "../styles/global.css";
           />
           <img srcset="logo-large.svg" alt="" />
         </picture>
-      </figure>
-    </div>
+      </div>
+    </section>
   </body>
 </html>
 
 <style>
+  .intro-section {
+    height: var(--svh-100);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .intro-header {
+    padding: 0 1.875rem 20vh;
+    width: 100%;
+  }
+
+  .intro-heading {
+    margin-block-start: 1.25rem;
+  }
+
+  .intro-link {
+    display: inline-block;
+    margin-block-start: 1.875rem;
+  }
+
   .intro-background {
     --clip-diameter: 45vmin;
     --clip-x: 75%;
@@ -39,22 +66,36 @@ import "../styles/global.css";
     clip-path: circle(
       calc(var(--clip-diameter) / 2) at var(--clip-x) var(--clip-y)
     );
-  }
-
-  .logo-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: var(--svh-100);
-    padding-inline: 1.875rem;
-  }
-
-  .logo {
+    position: absolute;
+    inset: 0;
+    height: 100%;
     width: 100%;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-logo {
+    width: 80vw;
   }
 
   @media (--md) {
+    .intro-section {
+      align-items: center;
+    }
+
+    .intro-header {
+      padding: 0 6.25rem;
+    }
+
+    .intro-heading {
+      margin-block-start: 2.5rem;
+    }
+
+    .intro-link {
+      margin-block-start: 4.0625rem;
+    }
+
     .logo-wrapper {
       padding-inline: 6.25rem;
     }

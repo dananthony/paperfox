@@ -1,5 +1,7 @@
 @import "./custom-media.css";
 @import "./variables.css";
+@import "fonts.css";
 @import "./typography.css";
 @import "./base.css";
 @import "./utils.css";
+@import "./common.css";

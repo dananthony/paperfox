@@ -12,3 +12,8 @@
   white-space: nowrap;
   clip-path: inset(50%);
 }
+
+.anchor {
+  font-size: 1rem;
+  border-bottom: 1px solid currentColor;
+}

@@ -1,22 +1,20 @@
 @font-face {
   font-family: "Favorit";
-  src: url("/fonts/favorit-light.woff") format("woff");
+  src: url("./fonts/favorit-light.woff") format("woff");
   font-weight: 300;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Favorit";
-  src: url("/fonts/favorit-medium.woff") format("woff");
+  src: url("./fonts/favorit-medium.woff") format("woff");
   font-weight: 500;
   font-display: swap;
 }
-
 @font-face {
-  font-family: "GT Pressura Mono";
+  font-family: "GT Pressura Pro Mono";
   src:
-    url("/fonts/gt-pressura-mono-light-webfont.woff2") format("woff2"),
-    url("/fonts/gt-pressura-mono-light-webfont.woff") format("woff");
+    url("/fonts/gt-pressura-mono-light.woff2") format("woff2"),
+    url("/fonts/gt-pressura-mono-light.woff") format("woff");
   font-weight: 300;
   font-display: swap;
 }
