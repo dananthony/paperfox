@@ -27,8 +27,7 @@ h6 {
   font: inherit;
 }
 
-img,
-video {
+img {
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -51,4 +50,10 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

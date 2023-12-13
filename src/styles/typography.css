@@ -30,8 +30,7 @@
 }
 
 /* label mono */
-.font-t6,
-.font-t7 {
+.font-t6 {
   font: 0.625rem / 1 var(--font-stack-mono);
   font-weight: 300;
   letter-spacing: 0.25em;
@@ -40,7 +39,8 @@
 
 /* label sans */
 .font-t7 {
-  font-family: var(--font-stack-sans);
+  font: 0.875rem / 1 var(--font-stack-sans);
+  font-weight: 300;
 }
 
 @media screen and (--md) {
