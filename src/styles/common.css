@@ -17,3 +17,9 @@
   font-size: 1rem;
   border-bottom: 1px solid currentColor;
 }
+
+@media (--md) {
+  .anchor {
+    font-size: 1.25rem;
+  }
+}

@@ -13,74 +13,82 @@ const services = [
 ---
 
 <section id="about-us" class:list={["about-us__section", className]} {...rest}>
-  <header class="about-us__header">
-    <h2 class="font-t6">About us</h2>
-    <p class="font-t4">
-      We are a digital design studio that knows how to get to the point. We
-      create bespoke websites that are fast, user-friendly and get you noticed.
-      Our focus is on solving big picture problems by linking great design with
-      modern function that feels good to use and makes sense.
-    </p>
-  </header>
-  <div class="about-us__services">
-    <h2 class="font-t6">We provide</h2>
-    <p class="font-t3">Digital design that solves big picture problems.</p>
-    <ul class="font-t7 about-us__list">
-      {services.map((service) => <li>{service}</li>)}
-    </ul>
+  <div class="about-us__wrapper">
+    <header class="about-us__header">
+      <h2 class="font-t6">About us</h2>
+      <p class="font-t4">
+        We are a digital design studio that knows how to get to the point. We
+        create bespoke websites that are fast, user-friendly and get you
+        noticed. Our focus is on solving big picture problems by linking great
+        design with modern function that feels good to use and makes sense.
+      </p>
+    </header>
+    <div class="about-us__services">
+      <h2 class="font-t6">We provide</h2>
+      <p class="font-t3">Digital design that solves big picture problems.</p>
+      <ul class="font-t7 about-us__list">
+        {services.map((service) => <li>{service}</li>)}
+      </ul>
+    </div>
   </div>
+</section>
 
-  <style>
-    .about-us__section {
-      min-height: var(--svh-100);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 3.75rem;
-      padding-inline: var(--container-padding-inline);
+<style>
+  .about-us__section {
+    min-height: var(--svh-100);
+    display: flex;
+    align-items: center;
+    padding-inline: var(--container-padding-inline);
+  }
+
+  .about-us__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3.75rem;
+  }
+
+  .about-us__header > h2 + *,
+  .about-us__services > h2 + * {
+    margin-block-start: 0.9375rem;
+  }
+
+  .about-us__list {
+    column-count: 2;
+    margin-block-start: 1.875rem;
+    font: 0.875rem / 2.14286 var(--font-stack-sans);
+    /* why is this needed? */
+    font-weight: 300;
+  }
+
+  @media (--lg) {
+    .about-us__wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .about-us__header {
+      /* width: 36.875rem; */
+      width: 55%;
+      max-width: 36.875rem;
+    }
+
+    .about-us__services {
+      width: 25.625rem;
+      max-width: 35%;
+      flex-shrink: 0;
     }
 
     .about-us__header > h2 + *,
     .about-us__services > h2 + * {
-      margin-block-start: 0.9375rem;
+      margin-block-start: 1.25rem;
     }
 
     .about-us__list {
-      column-count: 2;
-      margin-block-start: 1.875rem;
-      font: 0.875rem / 2.14286 var(--font-stack-sans);
-      /* why is this needed? */
-      font-weight: 300;
+      font-size: 1.125rem;
+      line-height: 2.33333;
+      margin-block-start: 3.125rem;
     }
-
-    @media (--md) {
-      .about-us__section {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .about-us__header {
-        width: 36.875rem;
-        max-width: 55%;
-      }
-
-      .about-us__services {
-        width: 25.625rem;
-        max-width: 35%;
-        flex-shrink: 0;
-      }
-
-      .about-us__header > h2 + *,
-      .about-us__services > h2 + * {
-        margin-block-start: 1.25rem;
-      }
-
-      .about-us__list {
-        font-size: 1.125rem;
-        line-height: 2.33333;
-        margin-block-start: 3.125rem;
-      }
-    }
-  </style>
-</section>
+  }
+</style>
