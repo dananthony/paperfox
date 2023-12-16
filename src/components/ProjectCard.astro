@@ -1,24 +1,50 @@
 ---
-import { Image } from "astro:assets";
+import type { GetImageResult } from "astro";
+import { Image, getImage } from "astro:assets";
 
 const {
   project: { data, slug, collection },
 } = Astro.props;
-const { title, description, cardCover, order } = data;
+const { title, description, cardBgLandscape, cardBgPortrait, order } = data;
 
 const isEven = order % 2 === 0;
+
+const imgDesktop = await getImage({
+  src: cardBgLandscape,
+  format: "webp",
+  widths: [750, 1024, 1440, 1920, 2048, 2880, 3840],
+});
+
+const imgPortrait = await getImage({
+  src: cardBgPortrait,
+  format: "webp",
+  widths: [360, 576, 768, 1152, 1536],
+});
+
+const getSrcSet = (image: GetImageResult) => {
+  return image.srcSet.values
+    .map(({ url, descriptor }) => {
+      return `${url} ${descriptor}`;
+    })
+    .join(", ");
+};
 ---
 
 <article class="project-card">
   <figure>
-    <Image
-      class="project-card__background-image"
-      src={cardCover}
-      srcset={cardCover.src}
-      alt=""
-      sizes="100vw"
-      widths={[750, 1024, 1440, 1920, 2048, 2880, 3840]}
-    />
+    <picture>
+      <source
+        media="(min-width: 768px) and (orientation: landscape)"
+        srcset={getSrcSet(imgDesktop)}
+        sizes="(-webkit-min-device-pixel-ratio: 2.5) 66vw, (min-resolution: 2.5dppx) 66vw, 100vw"
+      />
+      <source
+        media="(max-width: 767px) and (orientation: portrait)"
+        srcset={getSrcSet(imgPortrait)}
+        sizes="(-webkit-min-device-pixel-ratio: 2.5) 66vw, (min-resolution: 2.5dppx) 66vw, 100vw"
+      />
+      <img src={imgDesktop.src} alt="" class="project-card__background-image" />
+    </picture>
   </figure>
   <header
     class:list={[

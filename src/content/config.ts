@@ -6,9 +6,8 @@ const projectsCollection = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
-      cardCover: image().refine((img) => img.width >= 1080, {
-        message: "Cover image must be at least 1080 pixels wide!",
-      }),
+      cardBgLandscape: image(),
+      cardBgPortrait: image(),
       tags: z.array(z.string()),
       order: z.number(),
     }),
