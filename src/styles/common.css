@@ -14,12 +14,6 @@
 }
 
 .anchor {
-  font-size: 1rem;
-  border-bottom: 1px solid currentColor;
-}
-
-@media (--md) {
-  .anchor {
-    font-size: 1.25rem;
-  }
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }

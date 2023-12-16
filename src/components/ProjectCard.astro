@@ -5,7 +5,6 @@ const {
   project: { data, slug, collection },
 } = Astro.props;
 const { title, description, cardCover, order } = data;
-// console.log(project);
 
 const isEven = order % 2 === 0;
 ---
@@ -28,8 +27,8 @@ const isEven = order % 2 === 0;
     ]}
   >
     <h2 class="font-t6">Work / {title}</h2>
-    <p class="font-t2">{description}</p>
-    <a class="intro__link font-t6" href=`/${collection}/${slug}`>See more</a>
+    <p class="font-t2" set:html={description} />
+    <a class="anchor" href=`/${collection}/${slug}`>Read more &rarr;</a>
   </header>
 </article>
 
@@ -50,14 +49,13 @@ const isEven = order % 2 === 0;
   }
 
   .project-card__header {
-    width: 80%;
     margin-block-start: 15vh;
     background: rgba(0, 0, 0, 0.5);
     display: inline-block;
     padding: 1.25rem;
   }
 
-  .project-card__header > * {
+  .project-card__header > * + * {
     margin-block-start: 0.625rem;
   }
 
@@ -70,14 +68,13 @@ const isEven = order % 2 === 0;
     .project-card__header {
       margin-block-start: 0;
       padding: 2.5rem;
-      max-width: 42rem;
     }
 
     .project-card__header--right {
       margin-inline-start: auto;
     }
 
-    .project-card__header > * {
+    .project-card__header > * + * {
       margin-block-start: 0.9375rem;
     }
   }
