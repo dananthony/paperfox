@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+
+const {
+  project: { data, slug, collection },
+} = Astro.props;
+const { title, description, cardCover, order } = data;
+// console.log(project);
+
+const isEven = order % 2 === 0;
+---
+
+<article class="project-card">
+  <figure>
+    <Image
+      class="project-card__background-image"
+      src={cardCover}
+      srcset={cardCover.src}
+      alt=""
+      sizes="100vw"
+      widths={[750, 1024, 1440, 1920, 2048, 2880, 3840]}
+    />
+  </figure>
+  <header
+    class:list={[
+      "project-card__header",
+      isEven && "project-card__header--right",
+    ]}
+  >
+    <h2 class="font-t6">Work / {title}</h2>
+    <p class="font-t2">{description}</p>
+    <a class="intro__link font-t6" href=`/${collection}/${slug}`>See more</a>
+  </header>
+</article>
+
+<style>
+  .project-card {
+    min-height: var(--svh-100);
+    padding-inline: var(--container-padding-inline);
+    position: relative;
+  }
+
+  .project-card__background-image {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-card__header {
+    width: 80%;
+    margin-block-start: 15vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 1.25rem;
+  }
+
+  .project-card__header > * {
+    margin-block-start: 0.625rem;
+  }
+
+  @media (--md) {
+    .project-card {
+      display: flex;
+      align-items: center;
+    }
+
+    .project-card__header {
+      margin-block-start: 0;
+      padding: 2.5rem;
+      max-width: 42rem;
+    }
+
+    .project-card__header--right {
+      margin-inline-start: auto;
+    }
+
+    .project-card__header > * {
+      margin-block-start: 0.9375rem;
+    }
+  }
+</style>

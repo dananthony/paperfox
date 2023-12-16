@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navigation from "../components/Navigation.astro";
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -18,13 +19,3 @@ const { pageTitle } = Astro.props;
     <slot />
   </body>
 </html>
-
-<style>
-  @media (--md) {
-    html,
-    body {
-      height: 100%;
-      scroll-snap-type: y mandatory;
-    }
-  }
-</style>

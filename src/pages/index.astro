@@ -1,18 +1,27 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import IntroSection from "../components/IntroSection.astro";
 import AboutUsSection from "../components/AboutUsSection.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = await getCollection("projects");
+projects.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout pageTitle="Paperfox Studio">
   <main>
-    <IntroSection class="snap" />
-    <AboutUsSection class="snap" />
+    <IntroSection />
+    <AboutUsSection />
+    <ul>
+      {
+        projects.map((project) => (
+          <li>
+            <ProjectCard project={project} />
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </BaseLayout>
-
-<style>
-  .snap {
-    scroll-snap-align: start;
-  }
-</style>

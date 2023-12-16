@@ -6,6 +6,9 @@ module.exports = {
       files: ["*.astro"],
       // Allows Astro components to be parsed.
       parser: "astro-eslint-parser",
+      rules: {
+        "no-return-await": off,
+      },
     },
   ],
 };

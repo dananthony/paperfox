@@ -1,6 +1,4 @@
 ---
-const { class: className, ...rest } = Astro.props;
-
 const services = [
   "Web design",
   "Web development",
@@ -12,7 +10,7 @@ const services = [
 ];
 ---
 
-<section id="about-us" class:list={["about-us__section", className]} {...rest}>
+<section id="about-us" class="about-us">
   <div class="about-us__wrapper">
     <header class="about-us__header">
       <h2 class="font-t6">About us</h2>
@@ -34,7 +32,7 @@ const services = [
 </section>
 
 <style>
-  .about-us__section {
+  .about-us {
     min-height: var(--svh-100);
     display: flex;
     align-items: center;
