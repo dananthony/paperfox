@@ -22,7 +22,7 @@ const services = [
       </p>
     </header>
     <div class="about-us__services">
-      <h2 class="font-t6">We provide</h2>
+      <h3 class="font-t6">We provide</h3>
       <p class="font-t3">Digital design that solves big picture problems.</p>
       <ul class="font-t7 about-us__list">
         {services.map((service) => <li>{service}</li>)}
@@ -47,8 +47,8 @@ const services = [
     gap: 3.75rem;
   }
 
-  .about-us__header > h2 + *,
-  .about-us__services > h2 + * {
+  .about-us__header > * + *,
+  .about-us__services > * + * {
     margin-block-start: 0.9375rem;
   }
 

@@ -14,14 +14,19 @@ projects.sort((a, b) => a.data.order - b.data.order);
   <main>
     <IntroSection />
     <AboutUsSection />
-    <ul>
-      {
-        projects.map((project) => (
-          <li>
-            <ProjectCard project={project} />
-          </li>
-        ))
-      }
-    </ul>
+    <section>
+      <header class="sr-only">
+        <h2>Projects</h2>
+      </header>
+      <ul>
+        {
+          projects.map((project) => (
+            <li>
+              <ProjectCard project={project} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </main>
 </BaseLayout>
