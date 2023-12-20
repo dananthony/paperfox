@@ -14,7 +14,7 @@ const services = [
   <div class="about-us__wrapper">
     <header class="about-us__header">
       <h2 class="font-t6">About us</h2>
-      <p class="font-t4">
+      <p class="font-t4 about-us__statement">
         We are a digital design studio that knows how to get to the point. We
         create bespoke websites that are fast, user-friendly and get you
         noticed. Our focus is on solving big picture problems by linking great
@@ -23,7 +23,9 @@ const services = [
     </header>
     <div class="about-us__services">
       <h3 class="font-t6">We provide</h3>
-      <p class="font-t3">Digital design that solves big picture problems.</p>
+      <p class="font-t3 about-us__statement">
+        Digital design that solves big picture problems.
+      </p>
       <ul class="font-t7 about-us__list">
         {services.map((service) => <li>{service}</li>)}
       </ul>
@@ -47,8 +49,7 @@ const services = [
     gap: 3.75rem;
   }
 
-  .about-us__header > * + *,
-  .about-us__services > * + * {
+  .about-us__statement {
     margin-block-start: 0.9375rem;
   }
 
@@ -56,7 +57,6 @@ const services = [
     column-count: 2;
     margin-block-start: 1.875rem;
     font: 0.875rem / 2.14286 var(--font-stack-sans);
-    /* why is this needed? */
     font-weight: 300;
   }
 
@@ -77,8 +77,7 @@ const services = [
       flex-shrink: 0;
     }
 
-    .about-us__header > h2 + *,
-    .about-us__services > h2 + * {
+    .about-us__statement {
       margin-block-start: 1.25rem;
     }
 
