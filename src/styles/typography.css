@@ -43,7 +43,7 @@
   font-weight: 300;
 }
 
-@media screen and (--md) {
+@media (--md) {
   .font-t1 {
     font-size: 4.5rem;
   }
@@ -71,7 +71,7 @@
   }
 }
 
-@media screen and (--lg) {
+@media (--lg) {
   .font-t4 {
     font-size: 2.25rem;
   }

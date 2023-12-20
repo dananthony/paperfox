@@ -5,6 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import IntroSection from "../components/IntroSection.astro";
 import AboutUsSection from "../components/AboutUsSection.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import ClientsSection from "../components/ClientsSection.astro";
 
 const projects = await getCollection("projects");
 projects.sort((a, b) => a.data.order - b.data.order);
@@ -28,5 +29,6 @@ projects.sort((a, b) => a.data.order - b.data.order);
         }
       </ul>
     </section>
+    <ClientsSection />
   </main>
 </BaseLayout>

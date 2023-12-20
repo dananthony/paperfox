@@ -1,0 +1,120 @@
+---
+import { Image } from "astro:assets";
+
+const clients = [
+  {
+    name: "Gen C",
+    logo: import("../images/clients/genc-logo.svg"),
+  },
+  {
+    name: "Buckley Building",
+    logo: import("../images/clients/buckley-logo.svg"),
+  },
+  {
+    name: "Dylan Alcott Foundation",
+    logo: import("../images/clients/daf-logo.svg"),
+  },
+  {
+    name: "Mr Miyagi",
+    logo: import("../images/clients/mr-miyagi-logo.svg"),
+  },
+  {
+    name: "SA",
+    logo: import("../images/clients/sa-logo.svg"),
+  },
+  {
+    name: "Study Loans",
+    logo: import("../images/clients/study-loans-logo.svg"),
+  },
+];
+---
+
+<section class="clients">
+  <div class="clients__wrapper">
+    <header class="clients__header">
+      <h2 class="font-t6">Clients</h2>
+      <p class="clients__statement">
+        We work with clients from a range of industries, from Not-for-profits to
+        fin tech startups and everything in between. These are some of the
+        clients we've helped.
+      </p>
+    </header>
+    <ul class="clients__list">
+      {
+        clients.map(({ name, logo }) => (
+          <li class="clients__list-item">
+            <Image class="clients__logo" src={logo} alt={`${name} logo`} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .clients {
+    min-height: var(--svh-100);
+    display: flex;
+    align-items: center;
+
+    padding-inline: var(--container-padding-inline);
+  }
+
+  .clients__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .clients__statement {
+    font: 1.125rem / 1.3333 var(--font-stack-sans);
+    font-weight: 500;
+    margin-block-start: 0.9375rem;
+  }
+
+  .clients__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-start: 1.875rem;
+  }
+
+  .clients__list-item {
+    width: 25%;
+    margin: 0 12.5% 0.9375rem;
+    max-height: 10vh;
+  }
+
+  @media (--md) {
+    .clients__wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .clients__header {
+      width: 45%;
+      max-width: 34.375rem;
+    }
+
+    .clients__list {
+      margin-block-start: 0;
+      width: 40%;
+      max-width: 34.375rem;
+    }
+
+    .clients__list-item {
+      width: 35%;
+      margin: 0 0 7vh;
+    }
+
+    .clients__statement {
+      font-size: 1.875rem;
+      font-weight: 300;
+      line-height: 1.66667;
+    }
+  }
+</style>
